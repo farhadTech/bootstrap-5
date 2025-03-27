@@ -10,47 +10,135 @@
 
 </head>
 <body>
-<div class="container">
-    <h1>Navbar</h1>
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+<!--
+    navbar: Initializes a Bootstrap navbar.
+    navbar-expand-lg: Makes the navbar responsive by collapsing it into a "hamburger menu" on smaller devices.
+    bg-body-tertiary: Applies a background color from Bootstrap's preset color pallete.
+-->
+<nav class="navbar
+            navbar-expand-lg
+            bg-body-tertiary"
+            >
+<!--    <div class="container-fluid"></div>: A Bootstrap class that create a full-width container-->
+<!--    within the navbar for better layout control.-->
+    <div class="container-fluid">
+<!--
+        <a>: Defines a clickable anchor link. The navbar-brand class is a Bootstrap class
+        for styling the main branding text/logo of the navigation bar.
+        The href="#" points to the top of the page.
+-->
+        <a class="navbar-brand" href="#">Navbar</a>
+        <!--
+        <button>: Defines a button used to collapse or expand the navbar in responsive layouts.
+        -->
+        <!--
+        * class="navbar-toggler": Styles the button for the toggle functionality.
+        * type="button": Declares this as a button element.
+        * data-bs-toggle="collapse": Uses Bootstrap's JavaScript to toggle the collapse function.
+        * data-bs-target="#navbarSupportedContent": Specifies which element to collapse
+        (with an ID of navbarSupportedContent).
+        -->
+        <!--
+        * aria-controls: Identitfies the element being controlled by the button.
+        * aria-expanded="false": Indicates the current state (not expanded initially).
+        * aria-label="Toggle navigation": Accessibility label for screen readers.
+        -->
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <!--
+            <span>: Houses the navbar-toggler-icon class,
+            which displays a hamburger menu icon.
+            -->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--
+        * <div>: Defines the collapsible content for the navbar.
+        * Classes/Attributes:
+            * collapse: Collapsible behavior (hidden or expanded depending on the screen size).
+            * navbar-collapse: Additional Bootstrap style for collapse components in the navbar.
+            * id="navbarSupportedContent": Assigns on ID that matches the data-bs-target value from the button.
+        -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--
+            * navbar-nav: Applies Bootstrap styling for navigation.
+            * me-auto: Adds margin-end: auto to push subsequent elements to the right.
+            * mb-2: Adds a bottom margin of 2 units for space.
+            * mb-lg-0: Removes the bottom margin or large screen sizes.
+            -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!--
+                <li>: Represents a single item in the navigation list.
+                The nav-item class styles the item according to Bootstrap.
+                -->
+                <li class="nav-item">
+                    <!--
+                    * <a>: Creates a clickable link titles "Home".
+                    * Classes/Attributes:
+                    * class="nav-link active": Styles the link as a Bootstrap navigation link.
+                    The active class highlights the link as the current page.
+                    aria-current="page": Denotes this link as representing the current page.
+                    -->
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <!--
+                 * Dropdown setup:
+                 * class="nav-item dropdown": Styles the list item as a dropdown.
+                 * nav-link dropdown-toggle: Styles the llink and adds a dropdown caret.
+                 * data-bs-toggle="dropdown": Triggers the dropdown menu logic from Bootstrap's JavaScript.
+                -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="#" role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!--
+                        Each list contains dropdown-item for styling dropdown elements.
+                        -->
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <!--
+                    * Disabled link: The disabled class makes this link unclickable.
+                    The aria-disabled = "true"
+                    ensures accessibility for assistive technologies.
+                    -->
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <!--
+            * Search Form:
+             * The d-flex class creates a flexbox container for layout control.
+             * Inside the form:
+                * Input: A search bar styled as a form control.
+                * Button: A submit button with btn btn-outline-success classes for a styled appearance.
+            -->
+            <form class="d-flex" role="search">
+                <input class="form-control me-2"
+                       type="search"
+                       placeholder="Search"
+                       aria-label="Search">
+                <button class="btn btn-outline-success"
+                        type="submit">Search</button>
+            </form>
         </div>
-    </nav>
-</div>
-</body>
+    </div>
+</nav></body>
 <script src="../js/bootstrap.js"></script>
 </html>
 
